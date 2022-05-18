@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-import time
+
 
 class ProductPage(BasePage):
     def should_be_add_to_basket(self):
@@ -9,7 +9,6 @@ class ProductPage(BasePage):
         BasePage.solve_quiz_and_get_code(self)
         self.should_be_added_correct_title_of_book_in_basket()
         self.should_be_added_correct_price_of_book_in_basket()
-        time.sleep(1)
 
     def should_be_added_correct_title_of_book_in_basket(self):
         book_title = self.browser.find_element(*ProductPageLocators.TITLE_OF_BOOK)
